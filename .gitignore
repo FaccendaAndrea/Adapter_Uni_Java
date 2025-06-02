@@ -1,0 +1,19 @@
+# Build directory
+/build/
+
+# Documentation directory
+/doc/
+
+# IDE specific files
+.idea/
+.vscode/
+*.iml
+
+# Compiled class files
+*.class
+
+# Log files
+*.log
+
+# Package files
+# *.jar  # Uncomment this if you want to exclude junit.jar, but in this case keep it included for easier setup 
