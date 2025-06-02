@@ -16,4 +16,4 @@
 *.log
 
 # Package files
-# *.jar  # Uncomment this if you want to exclude junit.jar, but in this case keep it included for easier setup 
+# *.jar  # Uncomment this if you want to exclude junit.jar from JUnit/, but in this case keep it included for easier setup 

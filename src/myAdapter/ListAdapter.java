@@ -4,9 +4,19 @@ import java.util.Vector;
 import java.util.NoSuchElementException;
 
 /**
- * An implementation of the HList interface that adapts a Vector to provide List
- * functionality. This adapter allows a Vector to be used where a List is expected,
- * providing all the operations defined in the HList interface.
+ * Implementazione dell'adapter per l'interfaccia List di J2SE 1.4.2 utilizzando
+ * la classe Vector di CLDC 1.1 come adaptee.
+ * 
+ * Questa classe implementa tutte le funzionalità dell'interfaccia List di J2SE 1.4.2,
+ * incluse le optional operations, mantenendo la compatibilità con CLDC 1.1.
+ * L'implementazione utilizza Vector come struttura dati sottostante, adattando
+ * i suoi metodi per soddisfare il contratto dell'interfaccia List.
+ *
+ * @author [Il tuo nome]
+ * @version 1.0
+ * @see HList
+ * @see HCollection
+ * @see Vector
  */
 public class ListAdapter implements HList {
     private Vector vector;
