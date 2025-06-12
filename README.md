@@ -1,11 +1,6 @@
-# Java List Adapter (CLDC 1.1)
+# Adapter List CLDC 1.1
 
 Implementazione di un adapter per l'interfaccia List di J2SE 1.4.2 utilizzando la classe Vector di CLDC 1.1.
-
-## Requisiti di Sistema
-
-- Java Development Kit (JDK) versione 1.4.2 o superiore
-- Apache Ant (opzionale, per build automatizzato)
 
 ## Struttura del Progetto
 
@@ -14,68 +9,55 @@ Implementazione di un adapter per l'interfaccia List di J2SE 1.4.2 utilizzando l
 ├── src/
 │   ├── myAdapter/    # Package contenente l'implementazione dell'adapter
 │   └── myTest/       # Package contenente i test
-├── lib/              # Directory per le dipendenze
-│   └── junit.jar     # JUnit framework
-├── build/           # Directory per i file compilati
-└── build.xml        # File di configurazione Ant
+└── JUnit/            # Directory contenente junit.jar
 ```
 
-## Setup dell'Ambiente
+## Requisiti
 
-1. **Installazione JDK**:
-   - Scarica e installa il JDK da [Oracle](https://www.oracle.com/java/technologies/downloads/)
-   - Aggiungi JAVA_HOME alle variabili d'ambiente
-   - Aggiungi %JAVA_HOME%/bin al PATH
-
-2. **Setup JUnit** (se non presente):
-   - Scarica junit.jar da [JUnit Archive](https://search.maven.org/artifact/junit/junit/3.8.1/jar)
-   - Copia junit.jar nella directory `lib/` del progetto
+- Java Development Kit (JDK)
+- La directory JUnit deve contenere il file junit.jar (versione utilizzata: 3.8.1)
 
 ## Compilazione e Test
 
-### Usando il Terminale (Metodo Manuale)
-
-1. **Compilazione**:
+1. **Compilazione del progetto**:
    ```bash
-   # Crea la directory build se non esiste
-   mkdir build
-
-   # Compila i sorgenti
-   javac -d build -cp "lib\junit.jar;src" src\myAdapter\*.java src\myTest\*.java
+   javac -cp "JUnit/junit.jar" src/myAdapter/*.java src/myTest/*.java
    ```
 
-2. **Esecuzione dei Test**:
+2. **Esecuzione dei test**:
    ```bash
-   java -cp "build;lib\junit.jar" myTest.TestRunner
+   java -cp "JUnit/junit.jar;src" myTest.TestRunner
    ```
 
-### Usando Apache Ant (Opzionale)
+   L'output dei test mostrerà:
+   - Il numero di test eseguiti (indicato dal numero di punti ".")
+   - Il tempo di esecuzione
+   - Il risultato complessivo (OK se tutti i test passano)
 
-1. **Installazione Ant**:
-   - Scarica Apache Ant da [ant.apache.org](https://ant.apache.org/)
-   - Aggiungi ANT_HOME alle variabili d'ambiente
-   - Aggiungi %ANT_HOME%/bin al PATH
+## Test Suite
 
-2. **Comandi Ant**:
-   ```bash
-   # Compila il progetto
-   ant compile
+La test suite segue il template "Homework" come specificato nella consegna e include:
 
-   # Esegui i test
-   ant test
+- Summary: Descrizione dettagliata della test suite
+- Test Suite Design: Descrizione del design della test suite
+- Pre-Condition: Informazioni necessarie prima dell'esecuzione
+- Post-Condition: Informazioni che devono essere vere dopo l'esecuzione
+- Expected Results: Condizioni per il successo della test suite
+- Test Cases: Casi di test implementati
 
-   # Genera la documentazione
-   ant javadoc
+Ogni test case è documentato secondo il template "Homework" e include:
+- Summary
+- Pre-Condition
+- Post-Condition
+- Expected Results
 
-   # Pulisci i file generati
-   ant clean
-   ```
-
-## Note Aggiuntive
+## Note Importanti
 
 - Il progetto è stato sviluppato per essere compatibile con CLDC 1.1
 - L'implementazione segue le specifiche dell'interfaccia List di J2SE 1.4.2
 - Tutti i test sono documentati secondo il template "Homework"
+- Non è implementata la thread safety in quanto non richiesta
+- Non è implementato il comportamento fail-fast degli iteratori per modifiche concorrenti
 
 ## Author
 [Your Name] 
